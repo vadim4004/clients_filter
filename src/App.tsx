@@ -51,7 +51,14 @@ function App() {
 				(user) =>
 					user.firstName?.toLowerCase().includes(search.toLowerCase()) ||
 					user.lastName?.toLowerCase().includes(search.toLowerCase()) ||
-					user.patronymic?.toLowerCase().includes(search.toLowerCase())
+					user.patronymic?.toLowerCase().includes(search.toLowerCase()) ||
+					(
+						user.firstName?.toLowerCase() +
+						' ' +
+						user.lastName?.toLowerCase() +
+						' ' +
+						user.patronymic?.toLowerCase()
+					).includes(search.toLowerCase())
 		  );
 
 	return (
